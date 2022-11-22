@@ -22,10 +22,10 @@ const PostPage = () => {
             rewrite: (node) => {
               if (node.type === 'element') {
                 if (node.tagName === 'img') {
-                  node!.properties!.className = 'pb-8 w-full';
+                  node!.properties!.className = 'w-full pb-8';
                 } else if (node.tagName === 'p') {
                   node!.properties!.className =
-                    'text-xl px-12 pb-16 lg:px-72 md:px-36';
+                    'px-12 pb-16 text-xl lg:px-72 md:px-36';
                 }
               }
             },
@@ -46,11 +46,12 @@ const PostPage = () => {
     <Layout>
       <div className="flex flex-col">
         {/* Hero */}
-        <div className="px-12 py-40 text-center bg-gray-100 dark:bg-gray-800">
-          <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-yellow-300">
+        <div className="text-center bg-gray-100 py-80 px-36 dark:bg-gray-800">
+          <h1 className="text-6xl font-bold leading-relaxed text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-yellow-300">
             {post.title.rendered}
           </h1>
         </div>
+
         {/* Content */}
         <div
           dangerouslySetInnerHTML={{ __html: contentHtml }}

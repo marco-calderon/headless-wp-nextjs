@@ -9,4 +9,12 @@ export interface RenderedPostModel {
   content: {
     rendered: string;
   };
+  excerpt: {
+    rendered: string;
+  };
+  _embedded: {
+    'wp:featuredmedia': {
+      source_url: string;
+    }[];
+  };
 }

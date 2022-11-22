@@ -1,25 +1,28 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Navbar = () => {
   return (
-    <div className="w-full flex flex-row items-center h-22 px-16 py-3 backdrop-blur-md bg-white/30 dark:bg-black/30 fixed">
-      <h3 className="text-black dark:text-white text-lg font-bold">Blog</h3>
+    <div className="fixed flex flex-row items-center w-full px-16 py-3 h-22 backdrop-blur-md bg-white/30 dark:bg-black/30">
+      <Link href="/">
+        <h3 className="text-lg font-bold text-black dark:text-white">Blog</h3>
+      </Link>
 
       <span className="flex-1"></span>
 
       <div className="flex flex-row items-center gap-8">
-        <a className="text-md text-black dark:text-white font-semibold">
+        <a className="font-semibold text-black text-md dark:text-white">
           Daily Digest
         </a>
-        <a className="text-md text-black dark:text-white font-semibold">
+        <a className="font-semibold text-black text-md dark:text-white">
           Tools
         </a>
-        <a className="text-md text-black dark:text-white font-semibold">
+        <a className="font-semibold text-black text-md dark:text-white">
           Tutorials
         </a>
 
-        <div className="w-30 flex items-center justify-center"></div>
-        <button className="bg-black text-white dark:bg-white dark:text-black rounded-md font-semibold px-4 py-3">
+        <div className="flex items-center justify-center w-30"></div>
+        <button className="px-4 py-3 font-semibold text-white bg-black rounded-md dark:bg-white dark:text-black">
           Subscribe
         </button>
       </div>
