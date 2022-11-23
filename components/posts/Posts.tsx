@@ -57,15 +57,12 @@ const Posts = () => {
   if (isLoading) {
     return <p>Loading...</p>;
   }
+  
+  return <p>{JSON.stringify(posts)}</p>;
 
   return (
     <div className="flex flex-col gap-5">
-      {posts &&
-        posts.map((p) => (
-          <Link key={p.id} href={`/${p.id}`}>
-            <Post post={p} />
-          </Link>
-        ))}
+     
     </div>
   );
 };
