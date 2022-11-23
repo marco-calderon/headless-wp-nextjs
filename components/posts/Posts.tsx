@@ -51,8 +51,8 @@ const ANOTHER_QUERY = gql`
 `;
 
 const Posts = () => {
-  const { posts, isLoading, isError } = usePosts(1);
-  // const { data: posts, loading: isLoading } = useQuery(ANOTHER_QUERY);
+  // const { posts, isLoading, isError } = usePosts(1);
+  const { data: posts, loading: isLoading } = useQuery(ANOTHER_QUERY);
 
   if (isLoading) {
     return <p>Loading...</p>;
