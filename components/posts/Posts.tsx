@@ -35,16 +35,6 @@ const ANOTHER_QUERY = gql`
     posts {
       nodes {
         id
-        isPreview
-        title
-        modified
-        excerpt
-        featuredImage {
-          node {
-            srcSet
-            link
-          }
-        }
       }
     }
   }
