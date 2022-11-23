@@ -35,37 +35,28 @@ const ANOTHER_QUERY = gql`
     posts {
       nodes {
         id
-        isPreview
-        title
-        modified
-        excerpt
-        featuredImage {
-          node {
-            srcSet
-            link
-          }
-        }
       }
     }
   }
 `;
 
 const Posts = () => {
-  const { posts, isLoading, isError } = usePosts(1);
-  // const { data: posts, loading: isLoading } = useQuery(ANOTHER_QUERY);
+  // const { posts, isLoading, isError } = usePosts(1);
+  const { data: posts, loading: isLoading, error: isError } = useQuery(ANOTHER_QUERY);
 
   if (isLoading) {
     return <p>Loading...</p>;
   }
 
+  if (isError) {
+    return <p>{JSON.stringify(isError)}</p>
+  }
+  
+  return <p>{JSON.stringify(posts)}</p>;
+
   return (
     <div className="flex flex-col gap-5">
-      {posts &&
-        posts.map((p) => (
-          <Link key={p.id} href={`/${p.id}`}>
-            <Post post={p} />
-          </Link>
-        ))}
+     
     </div>
   );
 };
